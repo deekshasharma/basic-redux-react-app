@@ -18,15 +18,14 @@ class App extends Component {
     };
 
     onClickSave = () => {
-        this.props.dispatch(courseActions.createCourse(this.state.course))
+        this.props.createCourse(this.state.course);
     };
 
-    courseRow = (course, index) =>{
+    courseRow = (course, index) => {
         return <div key={index}>{course.title}</div>
     };
 
     render() {
-        debugger;
         return (
             <div>
                 <h1>Courses</h1>
@@ -49,18 +48,19 @@ class App extends Component {
     }
 }
 
-function mapStateToProps (state, ownProps) {
-    debugger;
-    return{
+function mapStateToProps(state, ownProps) {
+    return {
         courses: state.courses
     }
 };
 
-function mapDispatchToProps() {
-        // If we don't implement this, then connect will attach dispatch function automatically
+function mapDispatchToProps(dispatch) {
+    return {
+        createCourse: course => dispatch(courseActions.createCourse(course))
+    }
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 //Alternative to above line is:
 // const connectedStateAndProps = connect(mapStateToProps, mapDispatchToProps) => This returns a function

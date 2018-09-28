@@ -11,7 +11,7 @@ const authors = [
     },
     {
         id: '2',
-        firstName: 'Hayward',
+        firstName: 'Kushagra',
         lastName: 'Scott'
     },
     {

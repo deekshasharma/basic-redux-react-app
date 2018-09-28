@@ -17,7 +17,7 @@ const authors = [
     {
         id: '3',
         firstName: 'Deeksha',
-        lastName: 'Wayne'
+        lastName: 'Sharma'
     }
 ];
 
